@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote fetch="https://github.com/intel-innersource/" name="github-innersource"/>
+  <remote fetch="https://git.openembedded.org" name="openembedded"/>
+  <remote fetch="https://github.com" name="upstream"/>
+  <remote fetch="https://git.yoctoproject.org/git" name="yoctoproject"/>
+  
+  <default remote="github-innersource" revision="main"/>
+  
+  <project name="OSSystems/meta-browser" path="meta-browser" remote="upstream" revision="ea731e8d4fd8a0b40448ea286b2c92824ee591cc"/>
+  <project name="applications.automotive.configuration.manifest" path="manifest" revision="0b546f31675df9b0fbb3c8349ea44d0627f9ed9a" upstream="automotive/main">
+    <linkfile dest="setup-environment" src="setup-environment"/>
+    <linkfile dest="setup-environment-acrn" src="setup-environment-acrn"/>
+    <linkfile dest="setup-environment-dev" src="setup-environment-dev"/>
+    <linkfile dest="setup-environment-acrn-dev" src="setup-environment-acrn-dev"/>
+    <linkfile dest="setup-environment-elk" src="setup-environment-elk"/>
+  </project>
+  <project name="intel/iotg-yocto-ese-main" path="meta-intel-ese-main" remote="upstream" revision="10879f95dca1891890842fd287907ab23d154ad1"/>
+  <project name="intel/meta-acrn" path="meta-acrn" remote="upstream" revision="feb39cb4abd4784c1c05f2b30c82f15b3141ee7b"/>
+  <project name="kraj/meta-clang" path="meta-clang" remote="upstream" revision="eebe4ff2e539f3ffb01c5060cc4ca8b226ea8b52"/>
+  <project name="meta-intel" remote="yoctoproject" revision="e0c541c10f561b9c0087fd07ad5b79b0a534dab1"/>
+  <project name="meta-openembedded" remote="openembedded" revision="6ff0748a4741517519a281985fc3cd95dadb633e"/>
+  <project name="meta-qt5/meta-qt5" path="meta-qt5" remote="upstream" revision="fe0bf7f0e5408aac6cc89ff3b19b1b1941df4f64"/>
+  <project name="meta-virtualization" remote="yoctoproject" revision="88327090d26955a678c6f8bd2585aad4d802f6c4"/>
+  <project name="os.linux.yocto.meta-intel-automotive" path="meta-intel-automotive" revision="5930dee6af816917f434472f841ec91374464bfb" upstream="main"/>
+  <project name="os.linux.yocto.meta-intel-automotive-bsp" path="meta-intel-automotive-bsp" revision="f774de4f57da2ce068627f8cd672bf72e525b31d" upstream="main"/>
+  <project name="os.linux.yocto.meta-intel-automotive-virtualization" path="meta-intel-automotive-virtualization" revision="e80a2fdf361aafe83be827ee2f4f6c89b7958def" upstream="main"/>
+  <project name="os.linux.yocto.meta-intel-integration" path="meta-intel-integration" revision="b5e8672f78d3cf4b0e1e32c8cc87783dd760e912" upstream="automotive/main">
+    <linkfile dest="obb_build.sh" src="scripts/obb_build.sh"/>
+  </project>
+  <project name="poky" remote="yoctoproject" revision="31751bba1c789f15f574773a659b8017d7bcf440"/>
+  
+  <artifactory_server name="https://af01p-ir.devtools.intel.com/artifactory/" server_alias="artifactory_ir"/>
+  
+  <artifact lpath="cert/TestSigningPrivateKey.pem" rpath="maliboulake-release-ir-local/incoming/ww02/MBL_SblKey/OS1_TestKey_Priv_RSA3072.pem" server="artifactory_ir" sha256="d83238497061011a2b5923c5b0d88bd4200e47753364bbef2f646e50357511dc"/>
+</manifest>
